@@ -330,7 +330,7 @@ concat-map@0.0.1:
   resolved "https://registry.npm.taobao.org/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concurrently@^4.1.1:
+concurrently@^4.1.0:
   version "4.1.1"
   resolved "https://registry.npm.taobao.org/concurrently/download/concurrently-4.1.1.tgz#42cf84d625163f3f5b2e2262568211ad76e1dbe8"
   integrity sha1-Qs+E1iUWPz9bLiJiVoIRrXbh2+g=
@@ -608,6 +608,14 @@ expand-brackets@^2.1.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+express-validator@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npm.taobao.org/express-validator/download/express-validator-6.0.1.tgz#7ef3e6752cf603289a2ecc155191b78278f72de4"
+  integrity sha1-fvPmdSz2AyiaLswVUZG3gnj3LeQ=
+  dependencies:
+    lodash "^4.17.11"
+    validator "^11.0.0"
 
 express@^4.17.1:
   version "4.17.1"
@@ -2462,6 +2470,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.npm.taobao.org/validator/download/validator-11.0.0.tgz#fb10128bfb1fd14ce4ed36b79fc94289eae70667"
+  integrity sha1-+xASi/sf0Uzk7Ta3n8lCiernBmc=
 
 vary@~1.1.2:
   version "1.1.2"

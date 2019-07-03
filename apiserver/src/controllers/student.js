@@ -1,4 +1,4 @@
-const StudentModel = require('../models/Student');
+const StudentModel = require("../models/Student");
 
 /**
  * GET /api/student
@@ -20,11 +20,11 @@ const getStudentList = async (req, res, next) => {
       .skip((pageNum - 1) * pageSize)
       .limit(pageSize)
       .sort({ _id: 1 })
-      .populate('gradeId');
+      .populate("gradeId");
 
     res.send({
       code: 0,
-      msg: '获取学生列表成功',
+      msg: "获取学生列表成功",
       data: { list: studentList, pageTotal: Math.ceil(studentTotal / pageSize) }
     });
   } catch (error) {
@@ -41,7 +41,7 @@ const addStudent = async (req, res, next) => {
 
   try {
     await student.save();
-    res.send({ code: 0, msg: '新增学生成功' });
+    res.send({ code: 0, msg: "新增学生成功" });
   } catch (error) {
     next(error);
   }
@@ -55,18 +55,29 @@ const delStudent = async (req, res, next) => {
   const id = req.params.id;
   try {
     await StudentModel.deleteOne({ _id: id });
-    res.send({ code: 0, msg: '删除学生成功' });
+    res.send({ code: 0, msg: "删除学生成功" });
   } catch (error) {
     next(error);
   }
 };
+
 /**
  * PUT /api/student/:id
- * 删除学生
+ * 修改学生信息
  */
+const updStudent = async (req, res, next) => {
+  const id = req.params.id;
+  try {
+    await StudentModel.updateOne({ _id: id }, req.body);
+    res.send({ code: 0, msg: "修改学生信息成功" });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = {
   getStudentList,
   addStudent,
-  delStudent
+  delStudent,
+  updStudent
 };
